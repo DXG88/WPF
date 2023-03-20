@@ -1,9 +1,10 @@
-﻿<Window x:Class="WpfApp1.MainWindow"
+<Window x:Class="WpfApp1.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="200" Width="300">
+        Title="MainWindow" Height="220" Width="300">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -21,10 +22,11 @@
         <Label Content="Age:" Grid.Row="1" Grid.Column="0" Margin="10"/>
         <TextBox Text="{Binding UserAge}" Grid.Row="1" Grid.Column="1" Margin="10"/>
 
+        <Label Content="{Binding UserInfo}" Grid.Row="2" Grid.Column="1" Margin="10"/>
         <!-- Buttons for save and cancel commands -->
 
         <StackPanel Orientation= "Horizontal" HorizontalAlignment= "Right"
-                    Grid.Row= "2" Grid.ColumnSpan= "2">
+                    Grid.Row= "3" Grid.ColumnSpan= "2">
             <Button Content= "Save" Command="{Binding SaveCommand}"
                     CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor,
                   AncestorType={x:Type Window}}}" Margin= "10"/>
