@@ -40,6 +40,11 @@ namespace WpfApp1
             }
         }
 
+        public string UserInfo
+        {
+            get { return $"Name:{UserName} Age:{UserAge}"; }
+        }
+
         public ICommand SaveCommand { get; private set; }
         public ICommand CancelCommand { get; private set; }
 
@@ -48,11 +53,7 @@ namespace WpfApp1
             // Save user data to database or service
             MessageBox.Show("User data saved!");
 
-            // Close dialog window
-            var window = parameter as Window;
-            if (window != null)
-                window.Close();
-
+            OnPropertyChanged("UserInfo");
         }
 
         private void Cancel(object parameter)
